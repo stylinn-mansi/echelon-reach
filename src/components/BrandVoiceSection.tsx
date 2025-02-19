@@ -1,7 +1,5 @@
-
 const BrandVoiceSection = () => {
-  return (
-    <div className="relative py-24 bg-black">
+  return <div className="relative py-24 bg-black">
       {/* Top heading with italic style */}
       <div className="container mx-auto px-4 mb-24">
         <h2 className="text-4xl md:text-6xl font-serif italic text-center max-w-4xl mx-auto">
@@ -26,8 +24,10 @@ const BrandVoiceSection = () => {
           </div>
           <div className="relative">
             <div className="aspect-square rounded-full bg-[url('/lovable-uploads/09d56598-d6f3-4dad-ace8-42138aa60a3f.png')] bg-cover bg-center" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-48 h-48 rounded-full border-2 border-white/20 animate-spin-slow" style={{ animationDuration: '20s' }}>
+            <div className="absolute inset-0 flex items-center justify-center bg-zinc-700 hover:bg-zinc-600 rounded-xl">
+              <div className="w-48 h-48 rounded-full border-2 border-white/20 animate-spin-slow" style={{
+              animationDuration: '20s'
+            }}>
                 <div className="w-full h-full relative">
                   {/* Add circular text effect here if needed */}
                 </div>
@@ -36,8 +36,6 @@ const BrandVoiceSection = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default BrandVoiceSection;
