@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import BrandVoiceSection from '../components/BrandVoiceSection';
 import ServicesSection from '../components/ServicesSection';
+import ContactSection from '../components/ContactSection';
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <HeroSection />
       <BrandVoiceSection />
       <ServicesSection />
+      <ContactSection />
     </div>
   );
 };
