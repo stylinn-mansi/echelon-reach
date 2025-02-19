@@ -1,36 +1,68 @@
-
 const BrandVoiceSection = () => {
   return (
-    <div className="relative py-24 bg-black">
-      {/* Top heading with italic style */}
-      <div className="container mx-auto px-4 mb-24">
-        <h2 className="text-4xl md:text-6xl font-serif italic text-center max-w-4xl mx-auto">
-          Make your brand <span className="italic">stand out from the competition.</span>
-        </h2>
+    <div id="brand-voice" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Background image with dark overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[url('/black-fabric.png')] bg-cover bg-center opacity-50" />
       </div>
 
       {/* Brand Voice Content */}
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-serif mb-2">RISE & SHINE</h3>
-              <h2 className="text-4xl md:text-5xl font-serif">We'll help you find your <span className="italic">brand voice!</span></h2>
+              <h3 className="text-2xl md:text-3xl font-serif tracking-wider">
+                RISE & SHINE
+              </h3>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif">
+                We'll help you find your{" "}
+                <span className="italic font-light">brand voice!</span>
+              </h2>
             </div>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
-              Crafting a distinct brand voice can feel overwhelming, but it's the key to building a powerful and consistent online presence. I get how crucial it is to establish a strong, recognizable voice that resonates with your audience.
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl font-light">
+              Crafting a distinct brand voice can feel overwhelming, but it's
+              the key to building a powerful and consistent online presence. I
+              get how crucial it is to establish a strong, recognizable voice
+              that resonates with your audience.
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
-              That's why I partner closely with our clients, diving deep into their brand's core values, messaging, and target audience. Together, we transform this understanding into a brand voice guide—a blueprint that details the language, tone, and messaging needed to captivate and connect with your audience across every social media platform. Let's turn your brand's voice into its most compelling asset.
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl font-light">
+              That's why I partner closely with our clients, diving deep into
+              their brand's core values, messaging, and target audience.
+              Together, we transform this understanding into a brand voice
+              guide—a blueprint that details the language, tone, and messaging
+              needed to captivate and connect with your audience across every
+              social media platform. Let's turn your brand's voice into its most
+              compelling asset.
             </p>
           </div>
-          <div className="relative">
-            <div className="aspect-square rounded-full bg-[url('/lovable-uploads/09d56598-d6f3-4dad-ace8-42138aa60a3f.png')] bg-cover bg-center" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-48 h-48 rounded-full border-2 border-white/20 animate-spin-slow" style={{ animationDuration: '20s' }}>
-                <div className="w-full h-full relative">
-                  {/* Add circular text effect here if needed */}
-                </div>
+
+          {/* Right Content - Image with Rotating Text */}
+          <div className="relative aspect-auto">
+            <div className="w-full h-full overflow-hidden">
+              <img
+                src="vogue.jpg"
+                alt="Brand Voice"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Rotating Text Ring */}
+            <div className="absolute -bottom-20 -right-20 flex items-center justify-center">
+              <div className="w-[110%] h-[110%] animate-spin-slow">
+                <svg className="w-full h-full" viewBox="0 0 100 100">
+                  <defs>
+                    <path
+                      id="circle"
+                      d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                    />
+                  </defs>
+                  <text className="text-[8px] uppercase tracking-[0.3em] fill-white">
+                    <textPath xlinkHref="#circle">
+                      Digital Marketing • Brand Management • Digital Marketing •
+                      Brand Management •
+                    </textPath>
+                  </text>
+                </svg>
               </div>
             </div>
           </div>

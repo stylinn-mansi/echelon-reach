@@ -1,18 +1,29 @@
-
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import BrandVoiceSection from '../components/BrandVoiceSection';
 import ServicesSection from '../components/ServicesSection';
-import ContactSection from '../components/ContactSection';
+import BrandMessageSection from '../components/BrandMessageSection';
+import ShopSection from '../components/ShopSection';
+import BlogSection from '../components/BlogSection';
+import FooterSection from '../components/FooterSection';
+import ServiceDetailsSection from '../components/ServiceDetailsSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div id="home" className="min-h-screen bg-black text-white">
       <Navbar />
       <HeroSection />
+      <BrandMessageSection 
+        heading="Make your brand,"
+        subheading="Stand out from the competition!"
+      />
       <BrandVoiceSection />
       <ServicesSection />
-      <ContactSection />
+      <ServiceDetailsSection />
+      <ShopSection />
+      <BlogSection />
+    
+      <FooterSection />
     </div>
   );
 };

@@ -1,9 +1,24 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const navItems = [
+    { label: "Home", href: "#home" },
+    { label: "Services", href: "#services" },
+    { label: "Brand Voice", href: "#brand-voice" },
+    { label: "Shop", href: "#shop" },
+    { label: "Blogs", href: "#blogs" },
+    { label: "Contact", href: "#contact" }
+  ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,16 +36,21 @@ const Navbar = () => {
             Echelon Reach
           </Link>
           <div className="hidden md:flex items-center space-x-8">
-            {['HOME', 'ABOUT', 'SERVICES', 'BLOG', 'SHOP', 'CONTACT'].map((item) => (
-              <Link
-                key={item}
-                to={`/${item.toLowerCase()}`}
-                className="text-sm tracking-wider text-white hover:text-gray-300 transition-colors duration-200"
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="text-white hover:text-gray-300 transition-colors font-light tracking-wide"
               >
-                {item}
-              </Link>
+                {item.label}
+              </button>
             ))}
           </div>
+          <button className="md:hidden text-white">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
