@@ -7,6 +7,8 @@ import ShopSection from '../components/ShopSection';
 import BlogSection from '../components/BlogSection';
 import FooterSection from '../components/FooterSection';
 import ServiceDetailsSection from '../components/ServiceDetailsSection';
+import TrendingSection from '../components/TrendingSection';
+import FounderSection from '../components/FounderSection';
 
 const Index = () => {
   return (
@@ -20,9 +22,10 @@ const Index = () => {
       <BrandVoiceSection />
       <ServicesSection />
       <ServiceDetailsSection />
+      <FounderSection />
       <ShopSection />
+      <TrendingSection />
       <BlogSection />
-    
       <FooterSection />
     </div>
   );

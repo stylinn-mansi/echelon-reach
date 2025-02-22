@@ -2,24 +2,24 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Digital Marketing",
-      image: "/services/instagram.jpg",
+      image: "/posts/post1.jpg",
       subtitle: "LET'S TALK",
       label: "INSTAGRAM",
       description: "Elevate your brand's digital presence with our strategic marketing solutions."
     },
     {
       title: "Brand Management",
-      image: "/services/brand_management.jpg",
+      image: "/posts/post2.jpg",
       description: "Build and maintain a strong, consistent brand identity that resonates."
     },
     {
       title: "Creative Services",
-      image: "/services/creative_service.jpg",
+      image: "/posts/post3.jpg",
       description: "Transform your ideas into captivating visual experiences."
     },
     {
       title: "Strategy & Communication",
-      image: "/services/strategy.jpg",
+      image: "/posts/post4.jpg",
       description: "Develop effective strategies that drive meaningful engagement."
     }
   ];
