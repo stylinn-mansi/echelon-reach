@@ -131,8 +131,8 @@ const ServiceDetailsSection = () => {
 
               {/* creating section for service } */}
               <div>
-                <div className="text-6xl font-serif mb-2">{service.title}</div>
-                <div className="text-7xl md:text-lg font-serif">{service.description}</div>
+              
+                <div className="lg:text-4xl font-serif">{service.description}</div>
                 <button className="px-6 py-3 mt-8 bg-black text-white hover:bg-gray-800 transition-colors duration-300">
                     TELL ME MORE
                   </button>
