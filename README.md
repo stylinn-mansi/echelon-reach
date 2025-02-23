@@ -1,69 +1,80 @@
-# Welcome to your Lovable project
+# Echelon Reach - Digital Marketing & Brand Strategy
 
-## Project info
+![Echelon Reach Banner](public/banner.png)
 
-**URL**: https://lovable.dev/projects/367f7a61-2064-40b5-84d7-c003a8152745
+## 🚀 About Echelon Reach
 
-## How can I edit this code?
+Echelon Reach is a premium digital marketing and brand strategy agency that helps businesses elevate their social media presence and build compelling brand narratives. We transform your brand's story into an engaging dialogue that resonates with your audience.
 
-There are several ways of editing your application.
+### 🎯 Our Services
 
-**Use Lovable**
+- **Content Creation Kit**
+- **Brand Voice Development**
+- **Social Media Strategy**
+- **Digital Marketing Consultation**
+- **Brand Identity Design**
+- **Marketing Analytics**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/367f7a61-2064-40b5-84d7-c003a8152745) and start prompting.
+## 💻 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- React.js
+- TypeScript
+- Tailwind CSS
+- Vite
+- React Router DOM
 
-**Use your preferred IDE**
+## 🛠️ Installation & Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone the repository
+```bash
+git clone https://github.com/stylinn-mansi/echelon-reach.git
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Install dependencies
+```bash
+cd echelon-reach
+npm install
+```
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Build for production
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎨 Features
 
-**Use GitHub Codespaces**
+- **Responsive Design**: Fully responsive across all devices
+- **Modern UI/UX**: Sleek, modern interface with smooth animations
+- **Performance Optimized**: Fast loading and optimized assets
+- **SEO Ready**: Built with SEO best practices
+- **Interactive Elements**: Engaging user interactions and transitions
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📱 Screenshots
 
-## What technologies are used for this project?
+- Home Page
+- Services Section
+- Portfolio Gallery
+- Contact Form
 
-This project is built with .
+## 🤝 Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/stylinn-mansi/echelon-reach/issues).
 
-## How can I deploy this project?
+## 📝 License
 
-Simply open [Lovable](https://lovable.dev/projects/367f7a61-2064-40b5-84d7-c003a8152745) and click on Share -> Publish.
+This project is [MIT](LICENSE) licensed.
 
-## I want to use a custom domain - is that possible?
+## 👩‍💼 Contact
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- Website: [echelonreach.com](https://echelonreach.com)
+- Email: stylinnechelon@gmail.com
+- LinkedIn: [Echelon Reach](https://linkedin.com/company/echelon-reach)
+
+---
+
+⭐️ If you like this project, give it a ★ on [GitHub](https://github.com/stylinn-mansi/echelon-reach)!
