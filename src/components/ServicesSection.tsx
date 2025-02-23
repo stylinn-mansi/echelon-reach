@@ -36,7 +36,7 @@ const ServicesSection = () => {
         {/* Header Section */}
         <div className="max-w-4xl mx-auto mb-20 lg:mb-28">
           <div className="text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-black leading-tight">
               Our <span className="italic text-black">services</span>
             </h2>
             <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-light max-w-3xl mx-auto">
@@ -90,8 +90,8 @@ const ServicesSection = () => {
                     
                     {/* Arrow */}
                     {index < services.length - 1 && (
-                      <div className="ml-4 transform -rotate-45 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <div className="ml-4 transform -rotate-0 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5">
                           <line x1="5" y1="12" x2="19" y2="12" />
                           <polyline points="12 5 19 12 12 19" />
                         </svg>

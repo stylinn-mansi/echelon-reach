@@ -41,7 +41,7 @@ const BrandVoiceSection = () => {
             {/* Image Container */}
             <div className="w-full h-full rounded-full overflow-hidden shadow-2xl">
               <img 
-                src="/lovable-uploads/09d56598-d6f3-4dad-ace8-42138aa60a3f.png" 
+                src="vogue.jpg" 
                 alt="Brand Voice" 
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               />

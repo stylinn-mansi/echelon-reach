@@ -10,7 +10,7 @@ const ServiceDetailsSection = () => {
         "Graphic Design",
         "Web Design & Development",
         "Photography & Videography",
-        "Packaging & Collateral Design"
+        "Packaging & Collateral Design",
       ],
     },
     {
@@ -23,7 +23,7 @@ const ServiceDetailsSection = () => {
         "Brand Strategy",
         "Visual Identity",
         "Brand Guidelines",
-        "Market Positioning"
+        "Market Positioning",
       ],
     },
     {
@@ -36,7 +36,7 @@ const ServiceDetailsSection = () => {
         "Social Media Strategy",
         "Content Marketing",
         "Digital Campaigns",
-        "Brand Analytics"
+        "Brand Analytics",
       ],
     },
     {
@@ -49,7 +49,7 @@ const ServiceDetailsSection = () => {
         "Market Analysis",
         "Growth Strategy",
         "Brand Positioning",
-        "Performance Optimization"
+        "Performance Optimization",
       ],
     },
   ];
@@ -59,19 +59,31 @@ const ServiceDetailsSection = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="space-y-40">
           {services.map((service, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+            <div
+              key={index}
+              className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start"
+            >
               {/* Left Column - Service Number & Features */}
               <div className="md:col-span-3 space-y-12">
                 <div>
-                  <div className="font-serif text-xl tracking-widest opacity-80">SERVICE</div>
-                  <div className="service-number font-serif">{service.number}</div>
+                  <div className="font-serif text-xl tracking-widest opacity-80">
+                    SERVICE
+                  </div>
+                  <div className="service-number font-serif text-8xl md:text-8xl">
+                    {service.number}
+                  </div>
                 </div>
-                
+
                 <div className="space-y-6">
-                  <h4 className="font-serif text-xl tracking-widest">WHAT YOU GET:</h4>
+                  <h4 className="font-serif text-xl tracking-widest">
+                    WHAT YOU GET:
+                  </h4>
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="font-serif text-xl leading-relaxed">
+                      <li
+                        key={idx}
+                        className="font-serif text-md leading-tight"
+                      >
                         • {feature}
                       </li>
                     ))}
@@ -92,13 +104,13 @@ const ServiceDetailsSection = () => {
 
               {/* Right Column - Title & Description */}
               <div className="md:col-span-4 space-y-8 pt-12">
-                <h2 className="font-serif text-[2.5rem] leading-tight tracking-wide">
+                <h2 className="font-serif text-4xl leading-tight tracking-wide">
                   {service.title}
                 </h2>
                 <p className="font-serif text-xl leading-relaxed opacity-80">
                   {service.description}
                 </p>
-                <button className="bg-black text-white px-12 py-4 font-serif text-lg tracking-[0.2em] hover:bg-gray-900 transition-colors duration-300">
+                <button className="bg-white text-black px-12 py-4 font-semibold text-sm tracking-[0.2em] hover:bg-black hover:border-white hover:text-white transition-colors duration-300">
                   TELL ME MORE
                 </button>
               </div>

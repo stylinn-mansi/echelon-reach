@@ -1,23 +1,26 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const FooterSection = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     company: [
-      { label: "About Us", href: "#" },
-      { label: "Services", href: "#services" },
-      { label: "Blog", href: "#blogs" },
-      { label: "Contact", href: "#contact" }
+      { label: "About Us", href: "/about" },
+      { label: "Services", href: "/services" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" }
     ],
     services: [
-      { label: "Digital Marketing", href: "#" },
-      { label: "Brand Management", href: "#" },
-      { label: "Content Creation", href: "#" },
-      { label: "Strategy & Planning", href: "#" }
+      { label: "Digital Marketing", href: "/services/digital-marketing" },
+      { label: "Brand Management", href: "/services/brand-management" },
+      { label: "Content Creation", href: "/services/content-creation" },
+      { label: "Strategy & Planning", href: "/services/strategy-planning" }
     ],
     legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Cookie Policy", href: "#" }
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" },
+      { label: "Cookie Policy", href: "/cookie-policy" }
     ],
     social: [
       { 
@@ -65,8 +68,8 @@ const FooterSection = () => {
             <div className="space-y-4">
               <h2 className="text-3xl font-serif">Echelon Reach</h2>
               <p className="text-white/70 leading-relaxed text-lg">
-                Transforming brands through strategic design, compelling content, 
-                and innovative digital solutions.
+                Elevating brands through strategic digital marketing, compelling content creation, 
+                and innovative social media solutions.
               </p>
             </div>
             {/* Social Links */}
@@ -95,12 +98,12 @@ const FooterSection = () => {
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-white/60 hover:text-white transition-colors duration-300 text-lg"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -115,12 +118,12 @@ const FooterSection = () => {
             <ul className="space-y-4">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-white/60 hover:text-white transition-colors duration-300 text-lg"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -135,27 +138,26 @@ const FooterSection = () => {
             <ul className="space-y-4 text-white/60">
               <li>
                 <a 
-                  href="echelonreach.com" 
+                  href="mailto:hello@echelonreach.com" 
                   className="hover:text-white transition-colors duration-300 text-lg flex items-center gap-2"
                 >
                   <span className="w-5 h-5">✉</span>
-                  hello@agency414.com
+                  hello@echelonreach.com
                 </a>
               </li>
               <li>
                 <a 
-                  href="tel:+1234567890" 
+                  href="tel:+919833632670" 
                   className="hover:text-white transition-colors duration-300 text-lg flex items-center gap-2"
                 >
                   <span className="w-5 h-5">📞</span>
-                  +1 (234) 567-890
+                  +91 98336 32670
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-5 h-5 mt-1">📍</span>
                 <span>
-                  414 Design Street<br />
-                  Creative District, NY 10001
+                  Mumbai, India
                 </span>
               </li>
             </ul>
@@ -167,19 +169,19 @@ const FooterSection = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-white/60 text-lg">
-              © {currentYear} Agency 414. All rights reserved.
+              © {currentYear} Echelon Reach. All rights reserved.
             </div>
 
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center gap-8">
               {footerLinks.legal.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-white/60 hover:text-white text-lg transition-colors duration-300"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

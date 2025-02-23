@@ -99,11 +99,11 @@ const ShopSection = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {products.map((product) => (
             <div key={product.id} className="group">
-              {/* Product Card */}
-              <div className={`relative aspect-square rounded-2xl overflow-hidden transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:shadow-xl backdrop-blur-sm shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-white/20 ${product.gradient}`}>
+              {/* Product Card - Removed rounded-2xl for sharp edges */}
+              <div className={`relative aspect-square overflow-hidden transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:shadow-xl backdrop-blur-sm shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-white/20 ${product.gradient}`}>
                 {/* Background Image */}
                 <div className="absolute inset-0">
                   <img 
@@ -125,15 +125,12 @@ const ShopSection = () => {
                     </h3>
                   </div>
                   
-                  {/* Bottom Info */}
+                  {/* Bottom Info - Only Price */}
                   <div className="mt-2 sm:mt-4 pt-2 sm:pt-4 border-t border-white/20">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white text-sm sm:text-base font-medium backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full bg-black/30">
+                    <div className="flex justify-center items-center">
+                      <span className="text-white text-sm sm:text-base font-medium backdrop-blur-sm px-4 sm:px-6 py-2 bg-black/30">
                         {product.price}
                       </span>
-                      <button className="text-white/90 hover:text-white text-sm sm:text-base px-3 sm:px-4 py-1 rounded-full bg-black/30 hover:bg-black/50 transition-all duration-300 backdrop-blur-sm">
-                        Add to Cart
-                      </button>
                     </div>
                   </div>
                 </div>

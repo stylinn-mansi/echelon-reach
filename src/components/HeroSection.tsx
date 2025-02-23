@@ -9,7 +9,7 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4">
-        <h1 className="font-script text-7xl md:text-8xl text-white mb-1 animate-fade-up">
+        <h1 className="font-script text-5xl md:text-5xl text-white mb-1 animate-fade-up">
           Echelon Reach
         </h1>
         <p className="mt-1 md:text-xl lg:text-2xl sm:text-3xl text-gray-200 font-serif max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.4s" }}>
