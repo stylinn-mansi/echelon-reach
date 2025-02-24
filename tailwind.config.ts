@@ -1,9 +1,11 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./src/**/*.{ts,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,6 +16,10 @@ export default {
       },
     },
     extend: {
+      objectPosition: {
+        'video-center': 'center'
+      },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -21,7 +27,9 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#8D70ED",
+          dark: "#873CDF",
+          darker: "#492179",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -33,6 +41,7 @@ export default {
         sans: ["Inter", "sans-serif"],
         serif: ["Playfair Display", "serif"],
         script: ["Great Vibes", "cursive"],
+        syne: ["Syne", "sans-serif"],
       },
       keyframes: {
         "fade-up": {
@@ -61,9 +70,19 @@ export default {
             transform: "rotate(360deg)",
           },
         },
+        fadeUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
-        "fade-up": "fade-up 0.5s ease-out",
+        "fade-up": "fadeUp 0.5s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out",
         "spin-slow": "spin-slow 20s linear infinite",
       },

@@ -1,25 +1,19 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "Services", href: "#services" },
-    { label: "Brand Voice", href: "#brand-voice" },
-    { label: "Shop", href: "#shop" },
-    { label: "Blogs", href: "#blogs" },
-    { label: "Contact", href: "#contact" }
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Contact', href: '/contact' },
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,80 +23,109 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-black/90 backdrop-blur-md py-4 shadow-lg' 
-          : 'bg-transparent py-8'
-      }`}
-    >
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a 
-            href="#home" 
-            className="text-2xl md:text-3xl font-serif text-white hover:opacity-80 transition-all duration-300 tracking-wide"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#home');
-            }}
-          >
-            Echelon Reach <span className="font-light"></span>
-          </a>
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-white/90 hover:text-white transition-all duration-300 font-light tracking-wider text-base relative group py-2"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-full h-px bg-white/80 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
-              </button>
-            ))}
+  return (
+    <nav className={cn(
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      isScrolled ? "bg-black/50 backdrop-blur-lg" : "bg-transparent",
+      "border-b border-white/10"
+    )}>
+      <div className="container mx-auto px-4 h-20">
+        <div className="flex items-center justify-between h-full">
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={cn(
+                    "text-sm font-medium transition-all duration-300",
+                    isActive 
+                      ? "bg-gradient-to-r from-[#873CDF] to-[#492179] bg-clip-text text-transparent" 
+                      : "text-white/70 hover:text-white"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Logo and CTA Button */}
+          <div className="flex items-center justify-center gap-4 ml-auto md:ml-0">
+            <img 
+              src="/website_logo.png" 
+              alt="Logo" 
+              className="h-12 w-auto"
+            />
+            <div className="hidden md:block">
+              <Button variant="outline" size="sm">
+                Get in Touch
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-white p-2 focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg transition-all duration-300"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-white focus:outline-none"
             aria-label="Toggle menu"
           >
-            <div className="relative w-6 h-5">
-              <span className={`absolute w-full h-0.5 bg-white transform transition-all duration-300 ease-in-out ${
-                isMobileMenuOpen ? 'rotate-45 top-2' : 'top-0'
-              }`} />
-              <span className={`absolute w-full h-0.5 bg-white top-2 transition-opacity duration-300 ${
-                isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-              }`} />
-              <span className={`absolute w-full h-0.5 bg-white transform transition-all duration-300 ease-in-out ${
-                isMobileMenuOpen ? '-rotate-45 top-2' : 'top-4'
-              }`} />
+            <div className="w-6 h-5 relative flex flex-col justify-between">
+              <span className={cn(
+                "w-full h-0.5 bg-white transition-all duration-300 ease-in-out",
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              )} />
+              <span className={cn(
+                "w-full h-0.5 bg-white transition-all duration-300 ease-in-out",
+                isMenuOpen ? "opacity-0" : ""
+              )} />
+              <span className={cn(
+                "w-full h-0.5 bg-white transition-all duration-300 ease-in-out",
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              )} />
             </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div 
-          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-            isMobileMenuOpen 
-              ? 'max-h-[400px] opacity-100 mt-6' 
-              : 'max-h-0 opacity-0'
-          }`}
-        >
-          <div className="py-4 space-y-4 px-2">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300 font-light tracking-wider text-lg py-3 px-4 rounded-lg"
-              >
-                {item.label}
-              </button>
-            ))}
+        <div className={cn(
+          "fixed left-0 right-0 bg-black/95 backdrop-blur-lg transition-all duration-300 ease-in-out md:hidden",
+          isMenuOpen 
+            ? "top-20 opacity-100 visible" 
+            : "top-[-100%] opacity-0 invisible"
+        )}>
+          <div className="container mx-auto px-4 py-8">
+            <div className="flex flex-col gap-6">
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className={cn(
+                      "text-lg font-medium transition-all duration-300 py-2",
+                      isActive 
+                        ? "bg-gradient-to-r from-[#873CDF] to-[#492179] bg-clip-text text-transparent" 
+                        : "text-white/70 hover:text-white"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+              <div className="pt-4">
+                <Button variant="default" size="lg" className="w-full">
+                  Get in Touch
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
