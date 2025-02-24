@@ -28,7 +28,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-syne text-6xl md:text-7xl lg:text-8xl font-bold text-transparent  mb-8">
+          <h1 className="font-syne text-4xl md:text-7xl lg:text-8xl font-bold text-transparent  mb-8">
             <span className="bg-clip-text bg-gradient-to-r from-[#8D70ED] to-[#873CDF]">
               Premium{" "}
             </span>
