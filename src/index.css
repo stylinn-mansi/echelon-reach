@@ -1,3 +1,5 @@
+/* Import custom styles */
+@import './styles/blur-gradient.css';
 
 @tailwind base;
 @tailwind components;

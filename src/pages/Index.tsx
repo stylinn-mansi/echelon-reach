@@ -9,16 +9,15 @@ import FooterSection from '../components/FooterSection';
 import ServiceDetailsSection from '../components/ServiceDetailsSection';
 import TrendingSection from '../components/TrendingSection';
 import FounderSection from '../components/FounderSection';
-
-const Index = () => {
+import About from './About';
+import Divider from '../components/ui/divider';
+  const Index = () => {
   return (
     <div id="home" className="min-h-screen bg-black text-white">
       <Navbar />
       <HeroSection />
-      <BrandMessageSection 
-        heading="Make your brand,"
-        subheading="Stand out from the competition!"
-      />
+      <About />
+      <Divider />
       <BrandVoiceSection />
       <ServicesSection />
       <ServiceDetailsSection />

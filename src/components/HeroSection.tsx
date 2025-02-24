@@ -17,14 +17,14 @@ const HeroSection = () => {
       </video>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 ">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
-            <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-              NEW
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-2 py-2 rounded-[12px] mb-8 border-2 border-solid border-opacity-5 border-white">
+            <span className="bg-[#0055FE] text-white text-xs px-2 py-1 rounded-[6px] border-2 border-solid border-opacity-15 border-white/10 font-bold">
+              2025
             </span>
-            <span className="text-white/80 text-sm">No.1 Studio of 2025</span>
+            <span className="text-white/80 text-sm">Best Marketing Agency of 2025</span>
           </div>
 
           {/* Main Heading */}

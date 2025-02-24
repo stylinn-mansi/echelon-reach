@@ -17,6 +17,10 @@ export default function useLocoScroll(start: boolean) {
       lerp: 0.04
     });
 
+    // Expose the locomotive scroll instance to the window object
+    // so our BlurGradient component can access it
+    (window as any).locoScroll = locoScroll;
+
     // Update scroll on window resize
     const handleResize = () => {
       locoScroll.update();
@@ -28,6 +32,7 @@ export default function useLocoScroll(start: boolean) {
     // Cleanup
     return () => {
       locoScroll.destroy();
+      (window as any).locoScroll = null;
       window.removeEventListener('resize', handleResize);
     };
   }, [start]);
